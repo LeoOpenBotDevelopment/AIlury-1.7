@@ -758,7 +758,6 @@
       questions.forEach(question => {
         let score = similarity(userQuestion, question); // similarity() muss implementiert werden
         if (score > bestScore) {
-          bestScore = score;
           bestMatch = question;
         }
       });

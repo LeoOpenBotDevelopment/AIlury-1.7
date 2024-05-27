@@ -5482,7 +5482,7 @@
     },
     {
       "question": "can i teach you something ?",
-      "answer": "yes"
+      "answer": "no"
     },
     {
       "question": "quien sos?",
@@ -5494,7 +5494,7 @@
     },
     {
       "question": "do you save the things i teach you",
-      "answer": "yes, i save the things you teach me when i couldn't answer the given question"
+      "answer": "no, you can not teach me anything"
     },
     {
       "question": "how do i make you teach me something?",
@@ -5517,24 +5517,24 @@
       "answer": "no, you can not correct me"
     },
     {
-      "question": "kann ic,h dich korrigieren?",
+      "question": "kann ich dich korrigieren?",
       "answer": "nein, du kannst mich nicht korrigieren"
     },
     {
       "question": "wie bringe ich dir etwas bei?",
-      "answer": "um mir etwas beizubringen musst du mich etwas fragen das ich nicht beantworten wei\u00df"
+      "answer": "du kannst mir nichts beibringen"
     },
     {
       "question": "kann ich dir etwas beibringen?",
-      "answer": "ja, frage einfach etwas das ich nicht beantworten wei\u00df und gib mir die richtige antwort zu der frage die ich nicht beantworten wusste"
+      "answer": "nein, du kannst mir nichts beibringen"
     },
     {
       "question": "how do i switch this website to dark mode?",
-      "answer": "go to the settings by clicking on \"#\" and then click on \"dark theme\" to set the page to dark mode or on \"light theme\" to set the website to light mode"
+      "answer": "you can not do that on this website"
     },
     {
       "question": "how do i switch to light theme",
-      "answer": "to switch the theme on this website, go to the settings by clicking on \"#\" and then click on \"dark theme\" to set the page to dark mode or on \"light theme\" to set the website to light mode"
+      "answer": "you can not do that on this website"
     },
     {
       "question": "how do i go to settings",
@@ -5546,7 +5546,7 @@
     },
     {
       "question": "wie \u00e4ndere ich die hintergrund farbe auf dieser webseite?",
-      "answer": "gehe auf einstellungen indem du auf \u201e#\u201c klickst und dann auf \u201edark theme\u201c um die hintergrund farbe dunkel zu machen oder auf \u201elight theme\u201c um den hintergrund wider hell zu machen"
+      "answer": "du kannst die hintergrund farbe von dieser webseite nicht aendern"
     },
     {
       "question": "wie frage ich eine zuf\u00e4llige frage?",
@@ -5774,11 +5774,11 @@
     },
     {
       "question": "is the answer to the question you couldn't answer visible to everyone?",
-      "answer": "yes, if you give me the answer to a question that i could not answer and someone else repeats this question, the answer that you gave me for this question will be given as the answer"
+      "answer": "no, you can not teach me anything so i can not give people the right answer to questions i coulnt answer"
     },
     {
       "question": "ist die antwort auf die frage, die sie nicht beantworten konnten, f\u00fcr alle sichtbar?",
-      "answer": "ja, wenn sie mir die antwort auf eine frage geben, die ich nicht beantworten konnte, und jemand anderes diese frage wiederholt, wird die antwort, die sie mir auf diese frage gegeben haben, als antwort gegeben"
+      "answer": "nein, du kannst mir nichts beibringen also ist die ruchtige antwort zur frage die ich nicht beantworten konnte nicht für andere sichtbar"
     },
     {
       "question": "sind deine antworten immer richtig?",
@@ -5935,6 +5935,46 @@
     {
       "question": "porque te yamas ailury ?",
       "answer": "porque si"
+    },
+    {
+      "question": "can you speak",
+      "answer": "yes, i can speak"
+    },
+    {
+      "question": "can you talk?",
+      "answer": "yes, i can talk"
+    },
+    {
+      "question": "kannst du sprechen?",
+      "answer": "ja, ich kann sprechen"
+    },
+    {
+      "question": "kannst du reden",
+      "answer": "ja, ich kann reden"
+    },
+    {
+      "question": "wie bringe ich dich zum reden",
+      "answer": "klicke oben auf den \"speak: off\" button um mich zum reden zu bringen"
+    },
+    {
+      "question": "how can i make you speak?",
+      "answer": "click on the \"speak: off\" button to make me speak"
+    },
+    {
+      "question": "why dont you speak",
+      "answer": "because the \"speak: on\" button is on \"speak: off\""
+    },
+    {
+      "question": "wieso sprichst du nicht?",
+      "answer": "ich spreche nicht, weil der \"speak: on\" button ist auf \"speak: off\""
+    },
+    {
+      "question": "why do you speak?",
+      "answer": "i speak because the \"speak: off\" button is on \"speak: on\""
+    },
+    {
+      "question": "wieso sprichst du?",
+      "answer": "ich spreche weil der \"speak: off\" button auf \"speak: on\" ist"
     }
   ]
 }

@@ -1,0 +1,17 @@
+[
+    {
+        "Level": "middle",
+        "Frage": "wright a Function with the Name \"function\"",
+        "Antwort": "def function:"
+    },
+    {
+        "Level": "easy",
+        "Frage": "whats ist 2 + 2?",
+        "Antwort": "4"
+    },
+    {
+        "Level": "hard",
+        "Frage": "wright a class with the Name \"myclass\"",
+        "Antwort": "class myclass:"
+    }
+]

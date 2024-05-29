@@ -1,0 +1,487 @@
+[
+    {
+        "Level": "mittel",
+        "Frage": "schreibe eine Funktion mit dem Namen \"function\"",
+        "Antwort": "def function():"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "schrreibe ein if für wenn variable1 in variable2 is…",
+        "Antwort": "if variable1 in variable2:"
+    },
+    {
+        "Level": "schwer",
+        "Frage": "schreibe eine Klasse mit dem Namen \"myclass\"",
+        "Antwort": "class myclass:"
+    },
+    {
+        "Level": "schwer",
+        "Frage": "schreibe eine Funktion mit dem Namen \"function\" der ein element empfängt namens \"element\"",
+        "Antwort": "def function(element):"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "schreibe eine Funktion mit dem Namen \"function\" der ein element empfängt namens \"element\" und ein weiteres element empfängt namens \"element2\"",
+        "Antwort": "def function(element, element2):"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "schreibe eine Funktion mit dem Namen \"function\" der ein element empfängt namens \"element\" und ein weiteres element empfängt namens \"element2\" und ein weiteres element empfängt namens \"element3\"",
+        "Antwort": "def function(element, element2, element3):"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "schreibe eine Funktion mit dem Namen \"function\" der ein element empfängt namens \"element\" und ein weiteres element empfängt namens \"element2\" und ein weiteres element empfängt namens \"element3\" und ein weiteres element empfängt namens \"element4\"",
+        "Antwort": "def function(element, element2, element3, element4):"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "schreibe eine ",
+        "Antwort": "def function(element, element2, element3, element4, element5):"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'hello_world', die 'Hello, World!' ausgibt",
+        "Antwort": "def hello_world(): print('Hello, World!')"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'add', die zwei Argumente 'a' und 'b' empfängt und ihre Summe zurückgibt",
+        "Antwort": "def add(a, b): return a + b"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'subtract', die zwei Argumente 'a' und 'b' empfängt und ihre Differenz zurückgibt",
+        "Antwort": "def subtract(a, b): return a - b"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'multiply', die zwei Argumente 'a' und 'b' empfängt und ihr Produkt zurückgibt",
+        "Antwort": "def multiply(a, b): return a * b"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'divide', die zwei Argumente 'a' und 'b' empfängt und ihr Quotient zurückgibt",
+        "Antwort": "def divide(a, b): return a / b"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'square', die ein Argument 'x' empfängt und das Quadrat von 'x' zurückgibt",
+        "Antwort": "def square(x): return x * x"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'cube', die ein Argument 'x' empfängt und die dritte Potenz von 'x' zurückgibt",
+        "Antwort": "def cube(x): return x ** 3"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_even', die ein Argument 'n' empfängt und True zurückgibt, wenn 'n' gerade ist",
+        "Antwort": "def is_even(n): return n % 2 == 0"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_odd', die ein Argument 'n' empfängt und True zurückgibt, wenn 'n' ungerade ist",
+        "Antwort": "def is_odd(n): return n % 2 != 0"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'max_of_two', die zwei Argumente 'a' und 'b' empfängt und das größere zurückgibt",
+        "Antwort": "def max_of_two(a, b): return max(a, b)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'min_of_two', die zwei Argumente 'a' und 'b' empfängt und das kleinere zurückgibt",
+        "Antwort": "def min_of_two(a, b): return min(a, b)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'sum_list', die eine Liste von Zahlen empfängt und ihre Summe zurückgibt",
+        "Antwort": "def sum_list(numbers): return sum(numbers)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'product_list', die eine Liste von Zahlen empfängt und ihr Produkt zurückgibt",
+        "Antwort": "def product_list(numbers): return eval('*'.join(map(str, numbers)))"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'reverse_string', die einen String empfängt und ihn umkehrt zurückgibt",
+        "Antwort": "def reverse_string(s): return s[::-1]"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_palindrome', die einen String empfängt und True zurückgibt, wenn der String ein Palindrom ist",
+        "Antwort": "def is_palindrome(s): return s == s[::-1]"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'capitalize_string', die einen String empfängt und ihn mit einem Großbuchstaben zurückgibt",
+        "Antwort": "def capitalize_string(s): return s.capitalize()"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'uppercase_string', die einen String empfängt und ihn in Großbuchstaben zurückgibt",
+        "Antwort": "def uppercase_string(s): return s.upper()"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'lowercase_string', die einen String empfängt und ihn in Kleinbuchstaben zurückgibt",
+        "Antwort": "def lowercase_string(s): return s.lower()"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'count_vowels', die einen String empfängt und die Anzahl der Vokale im String zurückgibt",
+        "Antwort": "def count_vowels(s): return sum(1 for char in s if char.lower() in 'aeiou')"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'count_consonants', die einen String empfängt und die Anzahl der Konsonanten im String zurückgibt",
+        "Antwort": "def count_consonants(s): return sum(1 for char in s if char.lower() in 'bcdfghjklmnpqrstvwxyz')"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'factorial', die eine Zahl 'n' empfängt und die Fakultät von 'n' berechnet",
+        "Antwort": "def factorial(n): return 1 if n == 0 else n * factorial(n - 1)"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'fibonacci', die eine Zahl 'n' empfängt und die ersten 'n' Fibonacci-Zahlen als Liste zurückgibt",
+        "Antwort": "def fibonacci(n): return [0, 1][:n] + [sum(fibonacci(i - 1)[-2:]) for i in range(2, n)]"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'gcd', die zwei Zahlen 'a' und 'b' empfängt und ihren größten gemeinsamen Teiler zurückgibt",
+        "Antwort": "def gcd(a, b): while b: a, b = b, a % b; return a"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'lcm', die zwei Zahlen 'a' und 'b' empfängt und ihr kleinstes gemeinsames Vielfaches zurückgibt",
+        "Antwort": "def lcm(a, b): return abs(a*b) // gcd(a, b)"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'is_prime', die eine Zahl 'n' empfängt und True zurückgibt, wenn 'n' eine Primzahl ist",
+        "Antwort": "def is_prime(n): return all(n % i for i in range(2, int(n**0.5) + 1)) and n > 1"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'prime_factors', die eine Zahl 'n' empfängt und ihre Primfaktoren als Liste zurückgibt",
+        "Antwort": "def prime_factors(n): i, factors = 2, []; while i * i <= n: if n % i: i += 1; else: n //= i; factors.append(i); if n > 1: factors.append(n); return factors"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'is_perfect_square', die eine Zahl 'n' empfängt und True zurückgibt, wenn 'n' ein perfektes Quadrat ist",
+        "Antwort": "def is_perfect_square(n): return int(n**0.5)**2 == n"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'is_power_of_two', die eine Zahl 'n' empfängt und True zurückgibt, wenn 'n' eine Potenz von zwei ist",
+        "Antwort": "def is_power_of_two(n): return n > 0 and (n & (n - 1)) == 0"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'merge_sorted_lists', die zwei sortierte Listen 'a' und 'b' empfängt und sie zu einer sortierten Liste zusammenführt",
+        "Antwort": "def merge_sorted_lists(a, b): return sorted(a + b)"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'remove_duplicates', die eine Liste empfängt und eine neue Liste ohne Duplikate zurückgibt",
+        "Antwort": "def remove_duplicates(lst): return list(set(lst))"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'flatten_list', die eine verschachtelte Liste empfängt und eine flache Liste zurückgibt",
+        "Antwort": "def flatten_list(nested_list): return [item for sublist in nested_list for item in sublist]"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'transpose_matrix', die eine Matrix (Liste von Listen) empfängt und ihre Transponierte zurückgibt",
+        "Antwort": "def transpose_matrix(matrix): return list(map(list, zip(*matrix)))"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'dot_product', die zwei Vektoren (Listen) empfängt und ihr Skalarprodukt zurückgibt",
+        "Antwort": "def dot_product(a, b): return sum(x*y for x, y in zip(a, b))"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'matrix_addition', die zwei Matrizen (Listen von Listen) empfängt und ihre Summe zurückgibt",
+        "Antwort": "def matrix_addition(a, b): return [[x + y for x, y in zip(row_a, row_b)] for row_a, row_b in zip(a, b)]"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'matrix_subtraction', die zwei Matrizen (Listen von Listen) empfängt und ihre Differenz zurückgibt",
+        "Antwort": "def matrix_subtraction(a, b): return [[x - y for x, y in zip(row_a, row_b)] for row_a, row_b in zip(a, b)]"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'matrix_multiplication', die zwei Matrizen (Listen von Listen) empfängt und ihr Produkt zurückgibt",
+        "Antwort": "def matrix_multiplication(a, b): return [[sum(x*y for x, y in zip(row_a, col_b)) for col_b in zip(*b)] for row_a in a]"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'is_anagram', die zwei Strings empfängt und True zurückgibt, wenn sie Anagramme sind",
+        "Antwort": "def is_anagram(s1, s2): return sorted(s1) == sorted(s2)"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'most_frequent', die eine Liste empfängt und das häufigste Element zurückgibt",
+        "Antwort": "def most_frequent(lst): return max(set(lst), key=lst.count)"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'longest_word', die eine Liste von Wörtern empfängt und das längste Wort zurückgibt",
+        "Antwort": "def longest_word(words): return max(words, key=len)"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'shortest_word', die eine Liste von Wörtern empfängt und das kürzeste Wort zurückgibt",
+        "Antwort": "def shortest_word(words): return min(words, key=len)"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'word_count', die einen String empfängt und die Anzahl der Wörter im String zurückgibt",
+        "Antwort": "def word_count(s): return len(s.split())"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'char_count', die einen String empfängt und die Anzahl der Zeichen im String zurückgibt",
+        "Antwort": "def char_count(s): return len(s)"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'capitalize_words', die einen String empfängt und jeden Anfangsbuchstaben der Wörter großschreibt",
+        "Antwort": "def capitalize_words(s): return ' '.join(word.capitalize() for word in s.split())"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'swap_case', die einen String empfängt und die Groß- und Kleinschreibung vertauscht",
+        "Antwort": "def swap_case(s): return s.swapcase()"
+    },
+    {
+        "Level": "mittel",
+        "Frage": "Schreibe eine Funktion namens 'remove_vowels', die einen String empfängt und ihn ohne Vokale zurückgibt",
+        "Antwort": "def remove_vowels(s): return ''.join(char for char in s if char.lower() not in 'aeiou')"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'absolute_value', die eine Zahl 'x' empfängt und den absoluten Wert von 'x' zurückgibt",
+        "Antwort": "def absolute_value(x): return abs(x)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_positive', die eine Zahl 'x' empfängt und True zurückgibt, wenn 'x' positiv ist",
+        "Antwort": "def is_positive(x): return x > 0"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_negative', die eine Zahl 'x' empfängt und True zurückgibt, wenn 'x' negativ ist",
+        "Antwort": "def is_negative(x): return x < 0"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_zero', die eine Zahl 'x' empfängt und True zurückgibt, wenn 'x' null ist",
+        "Antwort": "def is_zero(x): return x == 0"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'fahrenheit_to_celsius', die eine Zahl 'f' empfängt und sie in Celsius umrechnet",
+        "Antwort": "def fahrenheit_to_celsius(f): return (f - 32) * 5/9"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'celsius_to_fahrenheit', die eine Zahl 'c' empfängt und sie in Fahrenheit umrechnet",
+        "Antwort": "def celsius_to_fahrenheit(c): return c * 9/5 + 32"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_divisible_by', die zwei Zahlen 'x' und 'y' empfängt und True zurückgibt, wenn 'x' durch 'y' teilbar ist",
+        "Antwort": "def is_divisible_by(x, y): return x % y == 0"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_vowel', die einen Buchstaben 'char' empfängt und True zurückgibt, wenn 'char' ein Vokal ist",
+        "Antwort": "def is_vowel(char): return char.lower() in 'aeiou'"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_consonant', die einen Buchstaben 'char' empfängt und True zurückgibt, wenn 'char' ein Konsonant ist",
+        "Antwort": "def is_consonant(char): return char.lower() in 'bcdfghjklmnpqrstvwxyz'"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'square_root', die eine Zahl 'x' empfängt und die Quadratwurzel von 'x' zurückgibt",
+        "Antwort": "def square_root(x): return x ** 0.5"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'cube_root', die eine Zahl 'x' empfängt und die dritte Wurzel von 'x' zurückgibt",
+        "Antwort": "def cube_root(x): return x ** (1/3)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'circumference', die einen Radius 'r' empfängt und den Umfang des Kreises zurückgibt",
+        "Antwort": "def circumference(r): return 2 * 3.14159 * r"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'area_of_circle', die einen Radius 'r' empfängt und die Fläche des Kreises zurückgibt",
+        "Antwort": "def area_of_circle(r): return 3.14159 * r * r"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'area_of_rectangle', die Länge 'l' und Breite 'w' empfängt und die Fläche des Rechtecks zurückgibt",
+        "Antwort": "def area_of_rectangle(l, w): return l * w"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'perimeter_of_rectangle', die Länge 'l' und Breite 'w' empfängt und den Umfang des Rechtecks zurückgibt",
+        "Antwort": "def perimeter_of_rectangle(l, w): return 2 * (l + w)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'area_of_triangle', die Basis 'b' und Höhe 'h' empfängt und die Fläche des Dreiecks zurückgibt",
+        "Antwort": "def area_of_triangle(b, h): return 0.5 * b * h"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'perimeter_of_triangle', die drei Seiten 'a', 'b' und 'c' empfängt und den Umfang des Dreiecks zurückgibt",
+        "Antwort": "def perimeter_of_triangle(a, b, c): return a + b + c"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_leap_year', die ein Jahr 'y' empfängt und True zurückgibt, wenn 'y' ein Schaltjahr ist",
+        "Antwort": "def is_leap_year(y): return y % 4 == 0 and (y % 100 != 0 or y % 400 == 0)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'fahrenheit_to_kelvin', die eine Zahl 'f' empfängt und sie in Kelvin umrechnet",
+        "Antwort": "def fahrenheit_to_kelvin(f): return (f - 32) * 5/9 + 273.15"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'kelvin_to_fahrenheit', die eine Zahl 'k' empfängt und sie in Fahrenheit umrechnet",
+        "Antwort": "def kelvin_to_fahrenheit(k): return (k - 273.15) * 9/5 + 32"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_alphabet', die ein Zeichen 'char' empfängt und True zurückgibt, wenn 'char' ein Buchstabe ist",
+        "Antwort": "def is_alphabet(char): return char.isalpha()"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_digit', die ein Zeichen 'char' empfängt und True zurückgibt, wenn 'char' eine Ziffer ist",
+        "Antwort": "def is_digit(char): return char.isdigit()"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'sum_of_digits', die eine Zahl 'n' empfängt und die Summe ihrer Ziffern zurückgibt",
+        "Antwort": "def sum_of_digits(n): return sum(int(digit) for digit in str(n))"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'count_words', die einen String 's' empfängt und die Anzahl der Wörter im String zurückgibt",
+        "Antwort": "def count_words(s): return len(s.split())"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_palindrome_number', die eine Zahl 'n' empfängt und True zurückgibt, wenn 'n' ein Palindrom ist",
+        "Antwort": "def is_palindrome_number(n): return str(n) == str(n)[::-1]"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_armstrong_number', die eine Zahl 'n' empfängt und True zurückgibt, wenn 'n' eine Armstrong-Zahl ist",
+        "Antwort": "def is_armstrong_number(n): return n == sum(int(digit) ** len(str(n)) for digit in str(n))"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_perfect_number', die eine Zahl 'n' empfängt und True zurückgibt, wenn 'n' eine perfekte Zahl ist",
+        "Antwort": "def is_perfect_number(n): return n == sum(i for i in range(1, n) if n % i == 0)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'binary_to_decimal', die eine Binärzahl 'b' als String empfängt und sie in Dezimal umwandelt",
+        "Antwort": "def binary_to_decimal(b): return int(b, 2)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'decimal_to_binary', die eine Dezimalzahl 'd' empfängt und sie in Binär umwandelt",
+        "Antwort": "def decimal_to_binary(d): return bin(d)[2:]"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'factorial', die eine Zahl 'n' empfängt und das Fakultät von 'n' berechnet",
+        "Antwort": "def factorial(n): return 1 if n == 0 else n * factorial(n - 1)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'fibonacci', die eine Zahl 'n' empfängt und die 'n'te Fibonacci-Zahl zurückgibt",
+        "Antwort": "def fibonacci(n): return n if n <= 1 else fibonacci(n - 1) + fibonacci(n - 2)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'is_prime', die eine Zahl 'n' empfängt und True zurückgibt, wenn 'n' eine Primzahl ist",
+        "Antwort": "def is_prime(n): return n > 1 and all(n % i for i in range(2, int(n ** 0.5) + 1))"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'gcd', die zwei Zahlen 'a' und 'b' empfängt und ihren größten gemeinsamen Teiler zurückgibt",
+        "Antwort": "def gcd(a, b): return a if b == 0 else gcd(b, a % b)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'lcm', die zwei Zahlen 'a' und 'b' empfängt und ihr kleinstes gemeinsames Vielfaches zurückgibt",
+        "Antwort": "def lcm(a, b): return abs(a*b) // gcd(a, b)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'sum_of_squares', die eine Zahl 'n' empfängt und die Summe der Quadrate bis 'n' berechnet",
+        "Antwort": "def sum_of_squares(n): return sum(i**2 for i in range(1, n+1))"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'sum_of_cubes', die eine Zahl 'n' empfängt und die Summe der Kuben bis 'n' berechnet",
+        "Antwort": "def sum_of_cubes(n): return sum(i**3 for i in range(1, n+1))"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'reverse_string', die einen String 's' empfängt und ihn umgekehrt zurückgibt",
+        "Antwort": "def reverse_string(s): return s[::-1]"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'sort_list', die eine Liste 'lst' empfängt und sie sortiert zurückgibt",
+        "Antwort": "def sort_list(lst): return sorted(lst)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'unique_elements', die eine Liste 'lst' empfängt und eine Liste der eindeutigen Elemente zurückgibt",
+        "Antwort": "def unique_elements(lst): return list(set(lst))"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'merge_lists', die zwei Listen 'a' und 'b' empfängt und eine zusammengefügte Liste zurückgibt",
+        "Antwort": "def merge_lists(a, b): return a + b"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'sum_list', die eine Liste 'lst' empfängt und die Summe der Elemente zurückgibt",
+        "Antwort": "def sum_list(lst): return sum(lst)"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'product_list', die eine Liste 'lst' empfängt und das Produkt der Elemente zurückgibt",
+        "Antwort": "def product_list(lst): return eval('*'.join(map(str, lst)))"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'even_numbers', die eine Liste 'lst' empfängt und eine Liste der geraden Zahlen zurückgibt",
+        "Antwort": "def even_numbers(lst): return [x for x in lst if x % 2 == 0]"
+    },
+    {
+        "Level": "leicht",
+        "Frage": "Schreibe eine Funktion namens 'odd_numbers', die eine Liste 'lst' empfängt und eine Liste der ungeraden Zahlen zurückgibt",
+        "Antwort": "def odd_numbers(lst): return [x for x in lst if x % 2 != 0]"
+    }
+]

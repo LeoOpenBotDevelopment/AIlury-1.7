@@ -371,6 +371,17 @@
       margin-left: 5px;
       transition: background-color 0.3s;
     }
+    #inscructionlink{
+          background-color: #ff2963;/*#ff5722;*/
+          color: #fff;
+          border: none;
+          padding: 5px 10px;
+          cursor: pointer;
+          border-radius: 5px;
+          font-size: 15px;
+          margin-left: 5px;
+          transition: background-color 0.3s;
+    }
   </style>
 </head>
 
@@ -462,7 +473,7 @@
     </div>
 
     <div class="chat-messages" id="chat-messages">
-      <h2 id="nmy" style="text-align: center;color: var(--primary-color);">no messages yet</h2>
+      <h2 id="nmy" style="text-align: center;color: var(--primary-color);">no messages yet<a href="instructions.html" id="inscructionlink">instructions</a></h2>
       <!-- nmy Hier werden die Chat-Nachrichten eingefügt -->
     </div>
     <button id="Breakbtn">Break</button>
@@ -508,6 +519,27 @@
   <h6 style="color: transparent;" id="bot-response"></h6>
   <h6 style="color: transparent;" id="idk">I dont know the answer. Please enter my answer to that question</h6>
   <script>
+    let theoldanswer = "";
+    let theoldanswer2 = "";
+    let thequestion2 = "nothing";
+    let theanswer2 = "nothing";
+    let theoldmathanswer = "";
+    let themathanswer = "";
+    let themathquestion = "";
+    let chalange = "nothing";
+    let thequestion = "nothing";
+    let theanswer = "nothing";
+    function clean() {
+        theoldanswer = "";
+        theoldanswer2 = "";
+        thequestion2 = "nothing";
+        theanswer2 = "nothing";
+        theoldmathanswer = "";
+        themathanswer = "";
+        themathquestion = "";
+        thequestion = "nothing";
+        theanswer = "nothing";
+    }
     // Function to handle message element click
     let ivif = document.getElementById('user-input');
     let button1 = document.getElementById('button1');
@@ -796,7 +828,55 @@
     // Array mit beiden Namenstypen
     let AAnamen = [MMnamen, JJnamen];
     // Funktion zur Verarbeitung der Benutzereingabe
+    let tasks = [];
+    let tasks2 = [];
+    let currentAnswer = '';
+    async function loadTasks() {
+            try {
+                const task1 = await fetch('tasks.json');
+                if (!task1.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                tasks = await task1.json();
+            } catch (error) {
+                console.error('Error loading tasks:', error);
+                return 'Error loading tasks';
+            }
+    }
+    async function loadTasks2() {
+              try {
+                  const task1 = await fetch('tasks2.json');
+                  if (!task1.ok) {
+                      throw new Error('Network response was not ok');
+                  }
+                  tasks2 = await task1.json();
+              } catch (error) {
+                  console.error('Error loading tasks:', error);
+                  return 'Error loading tasks';
+              }
+    }
+
+    function loadRandomTask() {
+            if (tasks.length === 0) {
+                return 'No tasks available';
+            }
+            const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
+            thequestion = randomTask.Frage;
+            return thequestion;
+            theanswer = randomTask.Antwort;
+    }
+
+    function checkAnswer(userMessage) {
+            if (userMessage === theanswer) {
+                return 'Richtig! Eine neue Aufgabe wird geladen.';
+                loadRandomTask();
+                document.getElementById('answer').value = '';
+            } else {
+                return 'Falsch! Versuchen Sie es erneut.';
+            }
+    }
     async function getBotResponse(userMessage) {
+     if (chalange == "nothing") {
       const userQuestion = userMessage.toLowerCase();
       const knowledgeBase = await loadKnowledgeBase('knowledge_base.json');
       const questions = knowledgeBase.questions.map(q => q.question);
@@ -1213,6 +1293,38 @@
               let answer = get_answer_for_question(best_match, knowledge_base);
               return `${answer}`;
           }
+      } else if (userQuestion.includes('python') && userQuestion.includes('lernen')) {
+          chalange = "python";
+          clean();
+          return "okay, du lernst jetzt python";
+      } else if (userQuestion.includes('python') && userQuestion.includes('üben')) {
+            chalange = "python";
+            clean();
+            return "okay, du übst jetzt python";
+      } else if (userQuestion.includes('mathe') && userQuestion.includes('lernen')) {
+            chalange = "mathe";
+            clean();
+            return "okay, du lernst jetzt mathe";
+      } else if (userQuestion.includes('mathe') && userQuestion.includes('üben')) {
+            chalange = "mathe";
+            clean();
+            return "okay, du übst jetzt mathe";
+      } else if (userQuestion.includes('learn') && userQuestion.includes('python')) {
+            chalange = "pythone";
+            clean();
+            return "okay, you're going to learn python now";
+      } else if (userQuestion.includes('practice') && userQuestion.includes('python')) {
+            chalange = "pythone";
+            clean();
+            return "okay, you are going to practice python now";
+      } else if (userQuestion.includes('learn') && userQuestion.includes('math')) {
+            chalange = "math";
+            clean();
+            return "okay, you are going to learn math now";
+      } else if (userQuestion.includes('practice') && userQuestion.includes('math')) {
+            chalange = "math";
+            clean();
+            return "okay, you are going to practice math now";
       } else if (bestMatch) {
         const answer = getAnswerForQuestion(bestMatch, knowledgeBase);
         if (answer == "Sorry but i dont know your Name") {
@@ -1237,12 +1349,385 @@
         }else {
           response = { message: `${answer}` };
         }
-        
+
       } else {
         response = { message: 'sorry but i do not know how to answer to that question' };
       }
 
       return response.message;
+    }else if (chalange == "python") {
+          const userQuestion = userMessage.toLowerCase();
+          const knowledgeBase = await loadKnowledgeBase('knowledge_base.json');
+          const questions = knowledgeBase.questions.map(q => q.question);
+          const bestMatch2 = findBestMatch(userQuestion, questions);
+          if (thequestion == "nothing") {
+              await loadTasks();
+              if (tasks.length === 0) {
+                      return 'No tasks available';
+              }
+              const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
+              thequestion = randomTask.Frage;
+              theanswer = randomTask.Antwort;
+              return thequestion;
+              
+          }else {
+                if (userMessage === theanswer) {
+                   if (tasks.length === 0) {
+                         return 'No tasks available';
+                     }
+                     const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
+                     thequestion = randomTask.Frage;
+                     theanswer = randomTask.Antwort;
+                     return 'Richtig! hier ist die neue aufgabe. ' + thequestion;
+                } else if (userQuestion.includes("idk")) {
+                     if (tasks.length === 0) {
+                          return 'No tasks available';
+                      }
+                      const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
+                      thequestion = randomTask.Frage;
+                      theoldanswer = theanswer;
+                      theanswer = randomTask.Antwort;
+                      return 'die richtige antwort ist: ' + theoldanswer + ' hier ist die neue aufgabe ' + thequestion;
+                }else if (userQuestion.includes('zurück') && userQuestion.includes('chat')) {
+                      chalange = "nothing";
+                      clean();
+                      return "okay, du bist zurück im normalen gespräch";
+                } else if (userQuestion.includes('gespräch') && userQuestion.includes('zurpck')) {
+                        chalange = "nothing";
+                        clean();
+                        return "okay, du bist nun wieder im normalen gespräch";
+                } else if (userQuestion.includes('mathe') && userQuestion.includes('lernen')) {
+                        chalange = "mathe";
+                        clean();
+                        return "okay, du lernst jetzt mathe";
+                } else if (userQuestion.includes('mathe') && userQuestion.includes('üben')) {
+                        chalange = "mathe";
+                        clean();
+                        return "okay, du übst jetzt mathe";
+                } else if (userQuestion.includes('learn') && userQuestion.includes('python')) {
+                        chalange = "pythone";
+                        clean();
+                        return "okay, you're going to learn python now";
+                } else if (userQuestion.includes('practice') && userQuestion.includes('python')) {
+                        chalange = "pythone";
+                        clean();
+                        return "okay, you are going to practice python now";
+                } else if (userQuestion.includes('learn') && userQuestion.includes('math')) {
+                        chalange = "math";
+                        clean();
+                        return "okay, you are going to learn math now";
+                } else if (userQuestion.includes('practice') && userQuestion.includes('math')) {
+                        chalange = "math";
+                        clean();
+                        return "okay, you are going to practice math now";
+                }else if (bestMatch2) {
+                    const answer = getAnswerForQuestion(bestMatch2, knowledgeBase);
+                    if (answer == "Sorry but i dont know your Name") {
+                      let name = document.getElementById("username-display");
+                      response = { message: `${name.textContent}` };
+                    } else if (answer == "Yes (Username)") {
+                      let name = document.getElementById("username-display");
+                      let text = "yes " + name.textContent;
+                      response = { message: `${text}` };
+                    }else if (answer == "hello (Username)") {
+                      let name = document.getElementById("username-display");
+                      let text = "hello " + name.textContent;
+                      response = { message: `${text}` };
+                    }else if (answer == "(Username)") {
+                      let name = document.getElementById("username-display");
+                      let text = name.textContent;
+                      response = { message: `${text}` };
+                    }else if (answer == "hallo (Username)") {
+                      let name = document.getElementById("username-display");
+                      let text = "hallo " + name.textContent;
+                      response = { message: `${text}` };
+                    }else {
+                      response = { message: `${answer}` };
+                    }
+                    return response.message;
+                }else {
+                   return 'Falsch! Versuchen Sie es erneut.';
+                }
+          }
+          
+     }else if (chalange == "pythone") {
+           const userQuestion = userMessage.toLowerCase();
+           const knowledgeBase = await loadKnowledgeBase('knowledge_base.json');
+           const questions = knowledgeBase.questions.map(q => q.question);
+           const bestMatch2 = findBestMatch(userQuestion, questions);
+           if (thequestion2 == "nothing") {
+               await loadTasks2();
+               if (tasks2.length === 0) {
+                       return 'No tasks available';
+               }
+               const randomTask2 = tasks2[Math.floor(Math.random() * tasks2.length)];
+               thequestion2 = randomTask2.Frage;
+               theanswer2 = randomTask2.Antwort;
+               return thequestion2;
+
+           }else {
+                if (userMessage === theanswer2) {
+                    if (tasks2.length === 0) {
+                          return 'No tasks available';
+                      }
+                      const randomTask2 = tasks2[Math.floor(Math.random() * tasks2.length)];
+                      thequestion2 = randomTask2.Frage;
+                      theanswer2 = randomTask2.Antwort;
+                      return 'correct! here you have a new question: ' + thequestion2;
+                } else if (userQuestion.includes("idk")) {
+                     if (tasks2.length === 0) {
+                          return 'No tasks available';
+                      }
+                      const randomTask2 = tasks2[Math.floor(Math.random() * tasks2.length)];
+                      thequestion2 = randomTask2.Frage;
+                      theoldanswer2 = theanswer2;
+                      theanswer2 = randomTask2.Antwort;
+                      return 'the correct answer is: ' + theoldanswer2 + ' here you have a new question ' + thequestion2;
+                }else if (userQuestion.includes('python') && userQuestion.includes('lernen')) {
+                      chalange = "python";
+                      clean();
+                      return "okay, du lernst jetzt python";
+                } else if (userQuestion.includes('python') && userQuestion.includes('üben')) {
+                        chalange = "python";
+                        clean();
+                        return "okay, du übst jetzt python";
+                } else if (userQuestion.includes('mathe') && userQuestion.includes('lernen')) {
+                        chalange = "mathe";
+                        clean();
+                        return "okay, du lernst jetzt mathe";
+                } else if (userQuestion.includes('mathe') && userQuestion.includes('üben')) {
+                        chalange = "mathe";
+                        clean();
+                        return "okay, du übst jetzt mathe";
+                } else if (userQuestion.includes('back') && userQuestion.includes('chat')) {
+                        chalange = "nothing";
+                        clean();
+                        return "okay, you're back in the normal chat";
+                } else if (userQuestion.includes('normal') && userQuestion.includes('chat')) {
+                        chalange = "nothing";
+                        clean();
+                        return "okay, you are back in the normal chat";
+                } else if (userQuestion.includes('learn') && userQuestion.includes('math')) {
+                        chalange = "math";
+                        clean();
+                        return "okay, you are going to learn math now";
+                } else if (userQuestion.includes('practice') && userQuestion.includes('math')) {
+                        chalange = "math";
+                        clean();
+                        return "okay, you are going to practice math now";
+                }else if (bestMatch2) {
+                      const answer = getAnswerForQuestion(bestMatch2, knowledgeBase);
+                      if (answer == "Sorry but i dont know your Name") {
+                        let name = document.getElementById("username-display");
+                        response = { message: `${name.textContent}` };
+                      } else if (answer == "Yes (Username)") {
+                        let name = document.getElementById("username-display");
+                        let text = "yes " + name.textContent;
+                        response = { message: `${text}` };
+                      }else if (answer == "hello (Username)") {
+                        let name = document.getElementById("username-display");
+                        let text = "hello " + name.textContent;
+                        response = { message: `${text}` };
+                      }else if (answer == "(Username)") {
+                        let name = document.getElementById("username-display");
+                        let text = name.textContent;
+                        response = { message: `${text}` };
+                      }else if (answer == "hallo (Username)") {
+                        let name = document.getElementById("username-display");
+                        let text = "hallo " + name.textContent;
+                        response = { message: `${text}` };
+                      }else {
+                        response = { message: `${answer}` };
+                      }
+                      return response.message;
+                }else {
+                    return 'wrong! try again.';
+                }
+           }
+
+     } else if (chalange == "mathe") {
+          const userQuestion = userMessage.toLowerCase();
+          const knowledgeBase = await loadKnowledgeBase('knowledge_base.json');
+          const questions = knowledgeBase.questions.map(q => q.question);
+          const bestMatch2 = findBestMatch(userQuestion, questions);
+          if (themathquestion == "") {
+              // create random math question
+              const num1 = Math.floor(Math.random() * 10) + 1;
+              const num2 = Math.floor(Math.random() * 10) + 1;
+              const operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+              themathquestion = `${num1} ${operator} ${num2}`;
+              themathanswer = eval(`${num1} ${operator} ${num2}`);
+              return themathquestion;
+              // if the user question == the answer to the mathematical question, return "correct"
+            
+          }else if (userQuestion == themathanswer) {
+              // create random math question
+              const num1 = Math.floor(Math.random() * 10) + 1;
+              const num2 = Math.floor(Math.random() * 10) + 1;
+              const operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+              themathquestion = `${num1} ${operator} ${num2}`;
+              themathanswer = eval(`${num1} ${operator} ${num2}`);
+              return 'Richtig! hier hast du die nöchste aufgabe ' + themathquestion;
+          }else if (themathquestion != "" && userQuestion.includes("idk")){
+              const num1 = Math.floor(Math.random() * 10) + 1;
+              const num2 = Math.floor(Math.random() * 10) + 1;
+              const operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+              theoldmathanswer = themathanswer;
+              themathquestion = `${num1} ${operator} ${num2}`;
+              themathanswer = eval(`${num1} ${operator} ${num2}`);
+              return "die richtige antwort ist: " + theoldmathanswer + " die neue aufgabe ist: " + themathquestion;
+          }else if (userQuestion.includes('python') && userQuestion.includes('lernen')) {
+                chalange = "python";
+                clean();
+                return "okay, du lernst jetzt python";
+          } else if (userQuestion.includes('python') && userQuestion.includes('üben')) {
+                  chalange = "python";
+                  clean();
+                  return "okay, du übst jetzt python";
+          } else if (userQuestion.includes('zu') && userQuestion.includes('gespräch')) {
+                  chalange = "nothing";
+                  clean();
+                  return "okay, du bist nun wieder im normalen gespräch";
+          } else if (userQuestion.includes('zurück') && userQuestion.includes('chat')) {
+                  chalange = "nothing";
+                  clean();
+                  return "okay, du bist zurück im normalen chat";
+          } else if (userQuestion.includes('learn') && userQuestion.includes('python')) {
+                  chalange = "pythone";
+                  clean();
+                  return "okay, you're going to learn python now";
+          } else if (userQuestion.includes('practice') && userQuestion.includes('python')) {
+                  chalange = "pythone";
+                  clean();
+                  return "okay, you are going to practice python now";
+          } else if (userQuestion.includes('learn') && userQuestion.includes('math')) {
+                  chalange = "math";
+                  clean();
+                  return "okay, you are going to learn math now";
+          } else if (userQuestion.includes('practice') && userQuestion.includes('math')) {
+                  chalange = "math";
+                  clean();
+                  return "okay, you are going to practice math now";
+          }else if (bestMatch2) {
+              const answer = getAnswerForQuestion(bestMatch2, knowledgeBase);
+              if (answer == "Sorry but i dont know your Name") {
+                let name = document.getElementById("username-display");
+                response = { message: `${name.textContent}` };
+              } else if (answer == "Yes (Username)") {
+                let name = document.getElementById("username-display");
+                let text = "yes " + name.textContent;
+                response = { message: `${text}` };
+              }else if (answer == "hello (Username)") {
+                let name = document.getElementById("username-display");
+                let text = "hello " + name.textContent;
+                response = { message: `${text}` };
+              }else if (answer == "(Username)") {
+                let name = document.getElementById("username-display");
+                let text = name.textContent;
+                response = { message: `${text}` };
+              }else if (answer == "hallo (Username)") {
+                let name = document.getElementById("username-display");
+                let text = "hallo " + name.textContent;
+                response = { message: `${text}` };
+              }else {
+                response = { message: `${answer}` };
+              }
+              return response.message;
+          }else {
+              return 'Falsch! Versuchen Sie es erneut.';
+          }
+     }else if (chalange == "math") {
+              const userQuestion = userMessage.toLowerCase();
+              const knowledgeBase = await loadKnowledgeBase('knowledge_base.json');
+              const questions = knowledgeBase.questions.map(q => q.question);
+              const bestMatch2 = findBestMatch(userQuestion, questions);
+              if (themathquestion == "") {
+                  // create random math question
+                  const num1 = Math.floor(Math.random() * 10) + 1;
+                  const num2 = Math.floor(Math.random() * 10) + 1;
+                  const operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+                  themathquestion = `${num1} ${operator} ${num2}`;
+                  themathanswer = eval(`${num1} ${operator} ${num2}`);
+                  return themathquestion;
+                  // if the user question == the answer to the mathematical question, return "correct"
+
+              }else if (userQuestion == themathanswer) {
+                  // create random math question
+                  const num1 = Math.floor(Math.random() * 10) + 1;
+                  const num2 = Math.floor(Math.random() * 10) + 1;
+                  const operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+                  themathquestion = `${num1} ${operator} ${num2}`;
+                  themathanswer = eval(`${num1} ${operator} ${num2}`);
+                  return 'correct! there you have the next question: ' + themathquestion;
+              }else if (themathquestion != "" && userQuestion.includes("idk")){
+                    const num1 = Math.floor(Math.random() * 10) + 1;
+                    const num2 = Math.floor(Math.random() * 10) + 1;
+                    const operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+                    theoldmathanswer = themathanswer;
+                    themathquestion = `${num1} ${operator} ${num2}`;
+                    themathanswer = eval(`${num1} ${operator} ${num2}`);
+                    return "the right answer is: " + theoldmathanswer + " the new question is: " + themathquestion;
+              }else if (userQuestion.includes('python') && userQuestion.includes('lernen')) {
+                    chalange = "python";
+                    clean();
+                    return "okay, du lernst jetzt python";
+              } else if (userQuestion.includes('python') && userQuestion.includes('üben')) {
+                      chalange = "python";
+                      clean();
+                      return "okay, du übst jetzt python";
+              } else if (userQuestion.includes('mathe') && userQuestion.includes('lernen')) {
+                      chalange = "mathe";
+                      clean();
+                      return "okay, du lernst jetzt mathe";
+              } else if (userQuestion.includes('mathe') && userQuestion.includes('üben')) {
+                      chalange = "mathe";
+                      clean();
+                      return "okay, du übst jetzt mathe";
+              } else if (userQuestion.includes('learn') && userQuestion.includes('python')) {
+                      chalange = "pythone";
+                      clean();
+                      return "okay, you're going to learn python now";
+              } else if (userQuestion.includes('practice') && userQuestion.includes('python')) {
+                      chalange = "pythone";
+                      clean();
+                      return "okay, you are going to practice python now";
+              } else if (userQuestion.includes('back') && userQuestion.includes('chat')) {
+                      chalange = "nothing";
+                      clean();
+                      return "okay, you are back in the normal chat now";
+              } else if (userQuestion.includes('normal') && userQuestion.includes('chat')) {
+                      chalange = "nothing";
+                      clean();
+                      return "okay, you're in the normal chat now";
+              }else if (bestMatch2) {
+                    const answer = getAnswerForQuestion(bestMatch2, knowledgeBase);
+                    if (answer == "Sorry but i dont know your Name") {
+                      let name = document.getElementById("username-display");
+                      response = { message: `${name.textContent}` };
+                    } else if (answer == "Yes (Username)") {
+                      let name = document.getElementById("username-display");
+                      let text = "yes " + name.textContent;
+                      response = { message: `${text}` };
+                    }else if (answer == "hello (Username)") {
+                      let name = document.getElementById("username-display");
+                      let text = "hello " + name.textContent;
+                      response = { message: `${text}` };
+                    }else if (answer == "(Username)") {
+                      let name = document.getElementById("username-display");
+                      let text = name.textContent;
+                      response = { message: `${text}` };
+                    }else if (answer == "hallo (Username)") {
+                      let name = document.getElementById("username-display");
+                      let text = "hallo " + name.textContent;
+                      response = { message: `${text}` };
+                    }else {
+                      response = { message: `${answer}` };
+                    }
+                    return response.message;
+              }else {
+                  return 'wrong! try again.';
+              }
+     }
     }
 
 
